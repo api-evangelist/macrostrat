@@ -12,7 +12,6 @@ apis:
       - url: https://macrostrat.org
         type: Documentation
     description: |-
-
       Macrostrat is a platform for the aggregation and distribution of
       geological data relevant to the spatial and temporal distribution of
       sedimentary, igneous, and metamorphic rocks as well as data extracted from
