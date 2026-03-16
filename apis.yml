@@ -26,7 +26,7 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-14'
-modified: '2025-01-01'
+modified: '2026-03-16'
 position: Consuming
 description: >-
   Macrostrat is a platform for the aggregation and distribution of geological
@@ -34,5 +34,5 @@ description: >-
   igneous, and metamorphic rocks as well as data extracted from them.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
