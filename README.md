@@ -1,48 +1,47 @@
 # Macrostrat (macrostrat)
-Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them.
 
-**URL:** [Visit APIs.json URL](
-https://raw.githubusercontent.com/api-search/macrostrat/refs/heads/main/apis.yml)
+Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks, as well as data extracted from them.
+
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Contract
+- **Position:** Consuming
+- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - Geological, Data, Rocks
+- Geological Data, Geology, Rocks, Paleontology, Earth Science
 
 ## Timestamps
 
-- **Created:** 2024-11-14 
-- **Modified:** 2025-01-01 
+- **Created:** 2024-11-14
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Macrostrat
+### Macrostrat API
 
-Macrostrat is a platform for the aggregation and distribution of
-geological data relevant to the spatial and temporal distribution of
-sedimentary, igneous, and metamorphic rocks as well as data extracted from
-them. It is linked to the xDD (formly GeoDeepDive) digital library and
-machine reading system, and it aims to become a community resource ...
+The Macrostrat API exposes geological data including columns, units, sections, fossils, geologic maps, paleogeography reconstructions, measurements, age models, and cartography services. It is linked to the xDD digital library and machine reading system.
 
 **Human URL:** [https://macrostrat.org](https://macrostrat.org)
 
-
-#### Tags:
-
- - API
+**Base URL:** `https://macrostrat.org/api/v2`
 
 #### Properties
 
-- [Documentation](https://macrostrat.org)
+- [Documentation](https://macrostrat.org/api/v2)
+- [Homepage](https://macrostrat.org)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/openapi/macrostrat-openapi.yml)
+
+## Artifacts
+
+- [OpenAPI 3.0 Specification](openapi/macrostrat-openapi.yml)
+- [API Reference](apis/macrostrat-api.md)
 
 ## Maintainers
 
 **FN:** Kin Lane
 
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com
