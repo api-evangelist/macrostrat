@@ -1,0 +1,591 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Macrostrat API
+  description: Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and
+    temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides
+    programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.
+  tags:
+  - Macrostrat
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: macrostrat
+    baseUri: https://macrostrat.org/api/v2
+    description: Macrostrat API HTTP API.
+    resources:
+    - name: columns
+      path: /columns
+      operations:
+      - name: getcolumns
+        method: GET
+        description: Search columns
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+        - name: lat
+          in: query
+          type: number
+        - name: lng
+          in: query
+          type: number
+        - name: age
+          in: query
+          type: number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sections
+      path: /sections
+      operations:
+      - name: getsections
+        method: GET
+        description: Summarize sections
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: units
+      path: /units
+      operations:
+      - name: getunits
+        method: GET
+        description: Search units
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+        - name: interval_name
+          in: query
+          type: string
+        - name: lith
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fossils
+      path: /fossils
+      operations:
+      - name: getfossils
+        method: GET
+        description: Search fossils
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: stats
+      path: /stats
+      operations:
+      - name: getstats
+        method: GET
+        description: Get database statistics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: paleogeography
+      path: /paleogeography
+      operations:
+      - name: getpaleogeography
+        method: GET
+        description: Get paleogeography reconstructions
+        inputParameters:
+        - name: age
+          in: query
+          type: number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: geologic-units-map
+      path: /geologic_units/map
+      operations:
+      - name: getgeologicmapunits
+        method: GET
+        description: Geologic map units
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: geologic-units-map-points
+      path: /geologic_units/map/points
+      operations:
+      - name: getgeologicmappoints
+        method: GET
+        description: Geologic map point features
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: geologic-units-map-legend
+      path: /geologic_units/map/legend
+      operations:
+      - name: getgeologicmaplegend
+        method: GET
+        description: Geologic map legend
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: measurements
+      path: /measurements
+      operations:
+      - name: getmeasurements
+        method: GET
+        description: Get measurements
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: age-model
+      path: /age_model
+      operations:
+      - name: getagemodel
+        method: GET
+        description: Get age model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: defs
+      path: /defs
+      operations:
+      - name: getdefs
+        method: GET
+        description: Standard definitions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: carto
+      path: /carto
+      operations:
+      - name: getcarto
+        method: GET
+        description: Geologic map creation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: grids
+      path: /grids
+      operations:
+      - name: getgrids
+        method: GET
+        description: Get grid data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: mobile
+      path: /mobile
+      operations:
+      - name: getmobile
+        method: GET
+        description: Mobile data delivery
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: meta
+      path: /meta
+      operations:
+      - name: getmeta
+        method: GET
+        description: API metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: macrostrat-rest
+    description: REST adapter for Macrostrat API.
+    resources:
+    - path: /columns
+      name: getcolumns
+      operations:
+      - method: GET
+        name: getcolumns
+        description: Search columns
+        call: macrostrat.getcolumns
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /sections
+      name: getsections
+      operations:
+      - method: GET
+        name: getsections
+        description: Summarize sections
+        call: macrostrat.getsections
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /units
+      name: getunits
+      operations:
+      - method: GET
+        name: getunits
+        description: Search units
+        call: macrostrat.getunits
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fossils
+      name: getfossils
+      operations:
+      - method: GET
+        name: getfossils
+        description: Search fossils
+        call: macrostrat.getfossils
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /stats
+      name: getstats
+      operations:
+      - method: GET
+        name: getstats
+        description: Get database statistics
+        call: macrostrat.getstats
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /paleogeography
+      name: getpaleogeography
+      operations:
+      - method: GET
+        name: getpaleogeography
+        description: Get paleogeography reconstructions
+        call: macrostrat.getpaleogeography
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /geologic_units/map
+      name: getgeologicmapunits
+      operations:
+      - method: GET
+        name: getgeologicmapunits
+        description: Geologic map units
+        call: macrostrat.getgeologicmapunits
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /geologic_units/map/points
+      name: getgeologicmappoints
+      operations:
+      - method: GET
+        name: getgeologicmappoints
+        description: Geologic map point features
+        call: macrostrat.getgeologicmappoints
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /geologic_units/map/legend
+      name: getgeologicmaplegend
+      operations:
+      - method: GET
+        name: getgeologicmaplegend
+        description: Geologic map legend
+        call: macrostrat.getgeologicmaplegend
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /measurements
+      name: getmeasurements
+      operations:
+      - method: GET
+        name: getmeasurements
+        description: Get measurements
+        call: macrostrat.getmeasurements
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /age_model
+      name: getagemodel
+      operations:
+      - method: GET
+        name: getagemodel
+        description: Get age model
+        call: macrostrat.getagemodel
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /defs
+      name: getdefs
+      operations:
+      - method: GET
+        name: getdefs
+        description: Standard definitions
+        call: macrostrat.getdefs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /carto
+      name: getcarto
+      operations:
+      - method: GET
+        name: getcarto
+        description: Geologic map creation
+        call: macrostrat.getcarto
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /grids
+      name: getgrids
+      operations:
+      - method: GET
+        name: getgrids
+        description: Get grid data
+        call: macrostrat.getgrids
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /mobile
+      name: getmobile
+      operations:
+      - method: GET
+        name: getmobile
+        description: Mobile data delivery
+        call: macrostrat.getmobile
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /meta
+      name: getmeta
+      operations:
+      - method: GET
+        name: getmeta
+        description: API metadata
+        call: macrostrat.getmeta
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: macrostrat-mcp
+    transport: http
+    description: MCP adapter for Macrostrat API for AI agent use.
+    tools:
+    - name: getcolumns
+      description: Search columns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getcolumns
+      with:
+        format: tools.format
+        lat: tools.lat
+        lng: tools.lng
+        age: tools.age
+      inputParameters:
+      - name: format
+        type: string
+        description: format
+      - name: lat
+        type: number
+        description: lat
+      - name: lng
+        type: number
+        description: lng
+      - name: age
+        type: number
+        description: age
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsections
+      description: Summarize sections
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getsections
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getunits
+      description: Search units
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getunits
+      with:
+        format: tools.format
+        interval_name: tools.interval_name
+        lith: tools.lith
+      inputParameters:
+      - name: format
+        type: string
+        description: format
+      - name: interval_name
+        type: string
+        description: interval_name
+      - name: lith
+        type: string
+        description: lith
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getfossils
+      description: Search fossils
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getfossils
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getstats
+      description: Get database statistics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getstats
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpaleogeography
+      description: Get paleogeography reconstructions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getpaleogeography
+      with:
+        age: tools.age
+      inputParameters:
+      - name: age
+        type: number
+        description: age
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getgeologicmapunits
+      description: Geologic map units
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getgeologicmapunits
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getgeologicmappoints
+      description: Geologic map point features
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getgeologicmappoints
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getgeologicmaplegend
+      description: Geologic map legend
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getgeologicmaplegend
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmeasurements
+      description: Get measurements
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getmeasurements
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getagemodel
+      description: Get age model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getagemodel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdefs
+      description: Standard definitions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getdefs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcarto
+      description: Geologic map creation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getcarto
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getgrids
+      description: Get grid data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getgrids
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmobile
+      description: Mobile data delivery
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getmobile
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmeta
+      description: API metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat.getmeta
+      outputParameters:
+      - type: object
+        mapping: $.
