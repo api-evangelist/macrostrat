@@ -4,7 +4,7 @@ description: >-
   Macrostrat is a platform for the aggregation and distribution of geological
   data relevant to the spatial and temporal distribution of sedimentary,
   igneous, and metamorphic rocks as well as data extracted from them.
-type: Contract
+kind: contract
 position: Consuming
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
