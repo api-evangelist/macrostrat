@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Macrostrat API — Mobile
+  description: 'Macrostrat API — Mobile. 1 operations. Lead operation: Mobile data delivery. Self-contained Naftiko capability
+    covering one Macrostrat business surface.'
+  tags:
+  - Macrostrat
+  - Mobile
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MACROSTRAT_API_KEY: MACROSTRAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: macrostrat-mobile
+    baseUri: https://macrostrat.org/api/v2
+    description: Macrostrat API — Mobile business capability. Self-contained, no shared references.
+    resources:
+    - name: mobile
+      path: /mobile
+      operations:
+      - name: getmobile
+        method: GET
+        description: Mobile data delivery
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: macrostrat-mobile-rest
+    port: 8080
+    description: REST adapter for Macrostrat API — Mobile. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/mobile
+      name: mobile
+      description: REST surface for mobile.
+      operations:
+      - method: GET
+        name: getmobile
+        description: Mobile data delivery
+        call: macrostrat-mobile.getmobile
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: macrostrat-mobile-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Macrostrat API — Mobile. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: mobile-data-delivery
+      description: Mobile data delivery
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat-mobile.getmobile
+      outputParameters:
+      - type: object
+        mapping: $.

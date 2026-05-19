@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Macrostrat API — Age Model
+  description: 'Macrostrat API — Age Model. 1 operations. Lead operation: Get age model. Self-contained Naftiko capability
+    covering one Macrostrat business surface.'
+  tags:
+  - Macrostrat
+  - Age Model
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MACROSTRAT_API_KEY: MACROSTRAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: macrostrat-age-model
+    baseUri: https://macrostrat.org/api/v2
+    description: Macrostrat API — Age Model business capability. Self-contained, no shared references.
+    resources:
+    - name: age_model
+      path: /age_model
+      operations:
+      - name: getagemodel
+        method: GET
+        description: Get age model
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: macrostrat-age-model-rest
+    port: 8080
+    description: REST adapter for Macrostrat API — Age Model. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/age-model
+      name: age-model
+      description: REST surface for age_model.
+      operations:
+      - method: GET
+        name: getagemodel
+        description: Get age model
+        call: macrostrat-age-model.getagemodel
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: macrostrat-age-model-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Macrostrat API — Age Model. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-age-model
+      description: Get age model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat-age-model.getagemodel
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Macrostrat API — Meta
+  description: 'Macrostrat API — Meta. 1 operations. Lead operation: API metadata. Self-contained Naftiko capability covering
+    one Macrostrat business surface.'
+  tags:
+  - Macrostrat
+  - Meta
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MACROSTRAT_API_KEY: MACROSTRAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: macrostrat-meta
+    baseUri: https://macrostrat.org/api/v2
+    description: Macrostrat API — Meta business capability. Self-contained, no shared references.
+    resources:
+    - name: meta
+      path: /meta
+      operations:
+      - name: getmeta
+        method: GET
+        description: API metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: macrostrat-meta-rest
+    port: 8080
+    description: REST adapter for Macrostrat API — Meta. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/meta
+      name: meta
+      description: REST surface for meta.
+      operations:
+      - method: GET
+        name: getmeta
+        description: API metadata
+        call: macrostrat-meta.getmeta
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: macrostrat-meta-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Macrostrat API — Meta. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: api-metadata
+      description: API metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat-meta.getmeta
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Macrostrat API — Sections
+  description: 'Macrostrat API — Sections. 1 operations. Lead operation: Summarize sections. Self-contained Naftiko capability
+    covering one Macrostrat business surface.'
+  tags:
+  - Macrostrat
+  - Sections
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MACROSTRAT_API_KEY: MACROSTRAT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: macrostrat-sections
+    baseUri: https://macrostrat.org/api/v2
+    description: Macrostrat API — Sections business capability. Self-contained, no shared references.
+    resources:
+    - name: sections
+      path: /sections
+      operations:
+      - name: getsections
+        method: GET
+        description: Summarize sections
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: macrostrat-sections-rest
+    port: 8080
+    description: REST adapter for Macrostrat API — Sections. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/sections
+      name: sections
+      description: REST surface for sections.
+      operations:
+      - method: GET
+        name: getsections
+        description: Summarize sections
+        call: macrostrat-sections.getsections
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: macrostrat-sections-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Macrostrat API — Sections. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: summarize-sections
+      description: Summarize sections
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: macrostrat-sections.getsections
+      outputParameters:
+      - type: object
+        mapping: $.
