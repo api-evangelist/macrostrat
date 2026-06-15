@@ -1,0 +1,344 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Columns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search columns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/columns",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lng",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "age",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search and summarize columns based on unit properties or geographic location."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Summarize sections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/sections"
+          },
+          "docs": "Summarize units by gap-bound packages."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Units",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/units",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lith",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all Macrostrat units that match the provided search criteria."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Fossils",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search fossils",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/fossils"
+          },
+          "docs": "Paleobiology Database collections matched to Macrostrat units."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get database statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/stats"
+          },
+          "docs": "Statistics about the Macrostrat database."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Paleogeography",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get paleogeography reconstructions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/paleogeography",
+            "params": [
+              {
+                "name": "age",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Paleogeography geometry from Wright et al. (2013) reconstruction data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Geologic Maps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Geologic map units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map"
+          },
+          "docs": "Geologic map units from various data sources."
+        },
+        {
+          "info": {
+            "name": "Geologic map point features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map/points"
+          },
+          "docs": "Query point features from geologic maps."
+        },
+        {
+          "info": {
+            "name": "Geologic map legend",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map/legend"
+          },
+          "docs": "Retrieve legends for geologic map units."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Measurements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get measurements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/measurements"
+          },
+          "docs": "Measurement data for Macrostrat units."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Age Model",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get age model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/age_model"
+          },
+          "docs": "Column age model components including unit boundaries."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Definitions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Standard definitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/defs"
+          },
+          "docs": "Standard fields and dictionaries used in Macrostrat."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cartography",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Geologic map creation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/carto"
+          },
+          "docs": "Geologic map creation routes."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Grids",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get grid data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/grids"
+          },
+          "docs": "Grid data with specified parameters."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Mobile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mobile data delivery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/mobile"
+          },
+          "docs": "Simplified data delivery for mobile applications."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Meta",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/meta"
+          },
+          "docs": "API metadata and reference information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
