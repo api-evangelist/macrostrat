@@ -38,7 +38,7 @@ apis:
     properties:
       - type: Documentation
         url: https://macrostrat.org/api/v2
-      - type: Homepage
+      - type: Website
         url: https://macrostrat.org
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/openapi/macrostrat-openapi.yml
