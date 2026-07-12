@@ -18,6 +18,8 @@ created: '2024-11-14'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 common:
+  - type: DomainSecurity
+    url: security/macrostrat-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/uw-macrostrat
 apis:
