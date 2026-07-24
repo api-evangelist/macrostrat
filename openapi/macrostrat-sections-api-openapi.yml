@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Macrostrat Age Model Sections API
+  description: Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.
+  version: '2.0'
+  license:
+    name: CC-BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+  contact:
+    name: Macrostrat
+    url: https://macrostrat.org
+servers:
+- url: https://macrostrat.org/api/v2
+  description: Macrostrat API v2 production endpoint
+tags:
+- name: Sections
+paths:
+  /sections:
+    get:
+      summary: Summarize sections
+      description: Summarize units by gap-bound packages.
+      operationId: getSections
+      tags:
+      - Sections
+      responses:
+        '200':
+          description: Successful response

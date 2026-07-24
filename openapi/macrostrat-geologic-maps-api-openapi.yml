@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Macrostrat Age Model Geologic Maps API
+  description: Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.
+  version: '2.0'
+  license:
+    name: CC-BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+  contact:
+    name: Macrostrat
+    url: https://macrostrat.org
+servers:
+- url: https://macrostrat.org/api/v2
+  description: Macrostrat API v2 production endpoint
+tags:
+- name: Geologic Maps
+paths:
+  /geologic_units/map:
+    get:
+      summary: Geologic map units
+      description: Geologic map units from various data sources.
+      operationId: getGeologicMapUnits
+      tags:
+      - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
+  /geologic_units/map/points:
+    get:
+      summary: Geologic map point features
+      description: Query point features from geologic maps.
+      operationId: getGeologicMapPoints
+      tags:
+      - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
+  /geologic_units/map/legend:
+    get:
+      summary: Geologic map legend
+      description: Retrieve legends for geologic map units.
+      operationId: getGeologicMapLegend
+      tags:
+      - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
