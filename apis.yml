@@ -4,9 +4,21 @@ description: >-
   Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal
   distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them.
 kind: contract
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/macrostrat.png
 url: https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/apis.yml
 tags:
   - Geological Data
@@ -25,27 +37,202 @@ common:
   - type: GitHubOrganization
     url: https://github.com/uw-macrostrat
 apis:
-  - aid: macrostrat:macrostrat
-    name: Macrostrat API
-    description: >-
-      The Macrostrat API exposes geological data including columns, units, sections, fossils, geologic maps,
-      paleogeography reconstructions, measurements, age models, and cartography services. It is linked to the xDD
-      digital library and machine reading system.
-    humanURL: https://macrostrat.org
-    baseURL: https://macrostrat.org/api/v2
-    tags:
-      - Geological Data
-      - Geology
-      - Rocks
-      - Paleontology
-      - Earth Science
-    properties:
-      - type: Documentation
-        url: https://macrostrat.org/api/v2
-      - type: Website
-        url: https://macrostrat.org
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/openapi/macrostrat-openapi.yml
+- aid: macrostrat:macrostrat-age-model-api
+  name: Macrostrat Age Model API
+  description: The Age Model API from Macrostrat — 1 operation(s) for age model.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Age Model
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-age-model-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-cartography-api
+  name: Macrostrat Cartography API
+  description: The Cartography API from Macrostrat — 1 operation(s) for cartography.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Cartography
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-cartography-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-columns-api
+  name: Macrostrat Columns API
+  description: The Columns API from Macrostrat — 1 operation(s) for columns.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Columns
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-columns-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-definitions-api
+  name: Macrostrat Definitions API
+  description: The Definitions API from Macrostrat — 1 operation(s) for definitions.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-fossils-api
+  name: Macrostrat Fossils API
+  description: The Fossils API from Macrostrat — 1 operation(s) for fossils.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Fossils
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-fossils-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-geologic-maps-api
+  name: Macrostrat Geologic Maps API
+  description: The Geologic Maps API from Macrostrat — 3 operation(s) for geologic maps.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Geologic Maps
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-geologic-maps-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-grids-api
+  name: Macrostrat Grids API
+  description: The Grids API from Macrostrat — 1 operation(s) for grids.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Grids
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-grids-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-measurements-api
+  name: Macrostrat Measurements API
+  description: The Measurements API from Macrostrat — 1 operation(s) for measurements.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Measurements
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-measurements-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-meta-api
+  name: Macrostrat Meta API
+  description: The Meta API from Macrostrat — 1 operation(s) for meta.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Meta
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-meta-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-mobile-api
+  name: Macrostrat Mobile API
+  description: The Mobile API from Macrostrat — 1 operation(s) for mobile.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Mobile
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-mobile-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-paleogeography-api
+  name: Macrostrat Paleogeography API
+  description: The Paleogeography API from Macrostrat — 1 operation(s) for paleogeography.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Paleogeography
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-paleogeography-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-sections-api
+  name: Macrostrat Sections API
+  description: The Sections API from Macrostrat — 1 operation(s) for sections.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Sections
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-sections-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-stats-api
+  name: Macrostrat Stats API
+  description: The Stats API from Macrostrat — 1 operation(s) for stats.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Stats
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-stats-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
+- aid: macrostrat:macrostrat-units-api
+  name: Macrostrat Units API
+  description: The Units API from Macrostrat — 1 operation(s) for units.
+  humanURL: https://macrostrat.org
+  baseURL: https://macrostrat.org/api/v2
+  tags:
+  - Units
+  properties:
+  - type: OpenAPI
+    url: openapi/macrostrat-units-api-openapi.yml
+  - type: Documentation
+    url: https://macrostrat.org/api/v2
+  - type: Website
+    url: https://macrostrat.org
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
