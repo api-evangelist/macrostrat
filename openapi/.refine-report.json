@@ -1,0 +1,40 @@
+{
+  "provider": "macrostrat",
+  "sources": [
+    "macrostrat-age-model-api-openapi.yml",
+    "macrostrat-cartography-api-openapi.yml",
+    "macrostrat-columns-api-openapi.yml",
+    "macrostrat-definitions-api-openapi.yml",
+    "macrostrat-fossils-api-openapi.yml",
+    "macrostrat-geologic-maps-api-openapi.yml",
+    "macrostrat-grids-api-openapi.yml",
+    "macrostrat-measurements-api-openapi.yml",
+    "macrostrat-meta-api-openapi.yml",
+    "macrostrat-mobile-api-openapi.yml",
+    "macrostrat-paleogeography-api-openapi.yml",
+    "macrostrat-sections-api-openapi.yml",
+    "macrostrat-stats-api-openapi.yml",
+    "macrostrat-units-api-openapi.yml"
+  ],
+  "outputs": [
+    "macrostrat-age-model-api-openapi.yml",
+    "macrostrat-cartography-api-openapi.yml",
+    "macrostrat-columns-api-openapi.yml",
+    "macrostrat-definitions-api-openapi.yml",
+    "macrostrat-fossils-api-openapi.yml",
+    "macrostrat-geologic-maps-api-openapi.yml",
+    "macrostrat-grids-api-openapi.yml",
+    "macrostrat-measurements-api-openapi.yml",
+    "macrostrat-meta-api-openapi.yml",
+    "macrostrat-mobile-api-openapi.yml",
+    "macrostrat-paleogeography-api-openapi.yml",
+    "macrostrat-sections-api-openapi.yml",
+    "macrostrat-stats-api-openapi.yml",
+    "macrostrat-units-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

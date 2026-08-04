@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  title: Macrostrat API
+  description: >-
+    Macrostrat is a platform for the aggregation and distribution of geological
+    data relevant to the spatial and temporal distribution of sedimentary,
+    igneous, and metamorphic rocks as well as data extracted from them. The API
+    provides programmatic access to columns, units, fossils, geologic maps,
+    paleogeography, measurements, and statistics.
+  version: '2.0'
+  license:
+    name: CC-BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+  contact:
+    name: Macrostrat
+    url: https://macrostrat.org
+servers:
+  - url: https://macrostrat.org/api/v2
+    description: Macrostrat API v2 production endpoint
+paths:
+  /columns:
+    get:
+      summary: Search columns
+      description: Search and summarize columns based on unit properties or geographic location.
+      operationId: getColumns
+      tags:
+        - Columns
+      parameters:
+        - name: format
+          in: query
+          schema:
+            type: string
+            enum: [json, csv, geojson, topojson]
+        - name: lat
+          in: query
+          schema:
+            type: number
+        - name: lng
+          in: query
+          schema:
+            type: number
+        - name: age
+          in: query
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful response
+  /sections:
+    get:
+      summary: Summarize sections
+      description: Summarize units by gap-bound packages.
+      operationId: getSections
+      tags:
+        - Sections
+      responses:
+        '200':
+          description: Successful response
+  /units:
+    get:
+      summary: Search units
+      description: Returns all Macrostrat units that match the provided search criteria.
+      operationId: getUnits
+      tags:
+        - Units
+      parameters:
+        - name: format
+          in: query
+          schema:
+            type: string
+            enum: [json, csv, geojson, topojson]
+        - name: interval_name
+          in: query
+          schema:
+            type: string
+        - name: lith
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /fossils:
+    get:
+      summary: Search fossils
+      description: Paleobiology Database collections matched to Macrostrat units.
+      operationId: getFossils
+      tags:
+        - Fossils
+      responses:
+        '200':
+          description: Successful response
+  /stats:
+    get:
+      summary: Get database statistics
+      description: Statistics about the Macrostrat database.
+      operationId: getStats
+      tags:
+        - Stats
+      responses:
+        '200':
+          description: Successful response
+  /paleogeography:
+    get:
+      summary: Get paleogeography reconstructions
+      description: Paleogeography geometry from Wright et al. (2013) reconstruction data.
+      operationId: getPaleogeography
+      tags:
+        - Paleogeography
+      parameters:
+        - name: age
+          in: query
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful response
+  /geologic_units/map:
+    get:
+      summary: Geologic map units
+      description: Geologic map units from various data sources.
+      operationId: getGeologicMapUnits
+      tags:
+        - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
+  /geologic_units/map/points:
+    get:
+      summary: Geologic map point features
+      description: Query point features from geologic maps.
+      operationId: getGeologicMapPoints
+      tags:
+        - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
+  /geologic_units/map/legend:
+    get:
+      summary: Geologic map legend
+      description: Retrieve legends for geologic map units.
+      operationId: getGeologicMapLegend
+      tags:
+        - Geologic Maps
+      responses:
+        '200':
+          description: Successful response
+  /measurements:
+    get:
+      summary: Get measurements
+      description: Measurement data for Macrostrat units.
+      operationId: getMeasurements
+      tags:
+        - Measurements
+      responses:
+        '200':
+          description: Successful response
+  /age_model:
+    get:
+      summary: Get age model
+      description: Column age model components including unit boundaries.
+      operationId: getAgeModel
+      tags:
+        - Age Model
+      responses:
+        '200':
+          description: Successful response
+  /defs:
+    get:
+      summary: Standard definitions
+      description: Standard fields and dictionaries used in Macrostrat.
+      operationId: getDefs
+      tags:
+        - Definitions
+      responses:
+        '200':
+          description: Successful response
+  /carto:
+    get:
+      summary: Geologic map creation
+      description: Geologic map creation routes.
+      operationId: getCarto
+      tags:
+        - Cartography
+      responses:
+        '200':
+          description: Successful response
+  /grids:
+    get:
+      summary: Get grid data
+      description: Grid data with specified parameters.
+      operationId: getGrids
+      tags:
+        - Grids
+      responses:
+        '200':
+          description: Successful response
+  /mobile:
+    get:
+      summary: Mobile data delivery
+      description: Simplified data delivery for mobile applications.
+      operationId: getMobile
+      tags:
+        - Mobile
+      responses:
+        '200':
+          description: Successful response
+  /meta:
+    get:
+      summary: API metadata
+      description: API metadata and reference information.
+      operationId: getMeta
+      tags:
+        - Meta
+      responses:
+        '200':
+          description: Successful response
+tags:
+  - name: Columns
+  - name: Sections
+  - name: Units
+  - name: Fossils
+  - name: Stats
+  - name: Paleogeography
+  - name: Geologic Maps
+  - name: Measurements
+  - name: Age Model
+  - name: Definitions
+  - name: Cartography
+  - name: Grids
+  - name: Mobile
+  - name: Meta
