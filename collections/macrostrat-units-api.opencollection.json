@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Units API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Units",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/units",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "interval_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lith",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all Macrostrat units that match the provided search criteria."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Sections API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Summarize sections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/sections"
+          },
+          "docs": "Summarize units by gap-bound packages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

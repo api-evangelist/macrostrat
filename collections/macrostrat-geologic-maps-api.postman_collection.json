@@ -1,0 +1,216 @@
+{
+  "item": [
+    {
+      "id": "a29a66b4-9247-41be-aa77-719e3611d5e8",
+      "name": "Geologic Maps",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a7e39293-25ac-4987-abf1-ad64dce0bc2e",
+          "name": "Geologic map units",
+          "request": {
+            "name": "Geologic map units",
+            "description": {
+              "content": "Geologic map units from various data sources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "geologic_units",
+                "map"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c892ffc5-a523-4c72-87b4-d7109415ef15",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "geologic_units",
+                    "map"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb491719-8f15-4208-8172-649845183899",
+          "name": "Geologic map point features",
+          "request": {
+            "name": "Geologic map point features",
+            "description": {
+              "content": "Query point features from geologic maps.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "geologic_units",
+                "map",
+                "points"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05987643-4327-4f5e-b669-4cd5afb4350c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "geologic_units",
+                    "map",
+                    "points"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc972924-bc55-41b9-9439-8b2234aa487c",
+          "name": "Geologic map legend",
+          "request": {
+            "name": "Geologic map legend",
+            "description": {
+              "content": "Retrieve legends for geologic map units.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "geologic_units",
+                "map",
+                "legend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26978867-beb6-437c-bb8e-82e3b8bd2632",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "geologic_units",
+                    "map",
+                    "legend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://macrostrat.org/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e27d2a6d-4a87-478c-a728-4e6f2aad3fd2",
+    "name": "Macrostrat Age Model Geologic Maps API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.\n\nContact Support:\n Name: Macrostrat",
+      "type": "text/plain"
+    }
+  }
+}

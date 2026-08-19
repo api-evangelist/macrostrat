@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Columns API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Columns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search columns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/columns",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lng",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "age",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search and summarize columns based on unit properties or geographic location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

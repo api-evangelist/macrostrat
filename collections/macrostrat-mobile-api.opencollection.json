@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Mobile API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mobile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mobile data delivery",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/mobile"
+          },
+          "docs": "Simplified data delivery for mobile applications."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

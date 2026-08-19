@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "5009bdc1-5cdf-43cd-890c-eb68d0cf94cf",
+      "name": "Units",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88b71d31-46eb-4a6c-8afc-25e2c88721a9",
+          "name": "Search units",
+          "request": {
+            "name": "Search units",
+            "description": {
+              "content": "Returns all Macrostrat units that match the provided search criteria.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "units"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "interval_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lith",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1817ed40-60d2-4a49-9518-578a0cdbeda2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "units"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "interval_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lith",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://macrostrat.org/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "75fcc118-7311-4893-b54b-c6edf8e8a190",
+    "name": "Macrostrat Age Model Units API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.\n\nContact Support:\n Name: Macrostrat",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "69b018f1-37b2-4d99-81f7-05078502f235",
+      "name": "Grids",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "da3dbd13-cc5e-4ee6-9402-88d575309d36",
+          "name": "Get grid data",
+          "request": {
+            "name": "Get grid data",
+            "description": {
+              "content": "Grid data with specified parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "grids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "136f24ca-6134-4b78-b963-e197e9a9d930",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "grids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://macrostrat.org/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b3e6efa4-00df-42e8-874b-384a62766036",
+    "name": "Macrostrat Age Model Grids API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.\n\nContact Support:\n Name: Macrostrat",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "item": [
+    {
+      "id": "55a55fd8-09f3-40cb-85a0-6ec67363dd07",
+      "name": "Measurements",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44673793-9dcc-40a1-90e5-cb87005d769a",
+          "name": "Get measurements",
+          "request": {
+            "name": "Get measurements",
+            "description": {
+              "content": "Measurement data for Macrostrat units.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "measurements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c284ee37-f71b-427d-9d3d-2a3b680a98f9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "measurements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://macrostrat.org/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "45c2aa6d-704d-4042-9420-06dec7999fca",
+    "name": "Macrostrat Age Model Measurements API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.\n\nContact Support:\n Name: Macrostrat",
+      "type": "text/plain"
+    }
+  }
+}

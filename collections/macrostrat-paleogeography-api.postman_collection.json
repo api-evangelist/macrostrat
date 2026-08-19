@@ -1,0 +1,101 @@
+{
+  "item": [
+    {
+      "id": "2400b745-5384-4de5-a51f-5453fa0e99b3",
+      "name": "Paleogeography",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ceca96b4-7d38-4324-89f2-fa4228c4f0c2",
+          "name": "Get paleogeography reconstructions",
+          "request": {
+            "name": "Get paleogeography reconstructions",
+            "description": {
+              "content": "Paleogeography geometry from Wright et al. (2013) reconstruction data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "paleogeography"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "age",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9caa402c-d92b-4dfd-a5fe-579e0d4cb5e5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "paleogeography"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "age",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://macrostrat.org/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9ea90999-9c63-4395-a252-8417c9bea8d6",
+    "name": "Macrostrat Age Model Paleogeography API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them. The API provides programmatic access to columns, units, fossils, geologic maps, paleogeography, measurements, and statistics.\n\nContact Support:\n Name: Macrostrat",
+      "type": "text/plain"
+    }
+  }
+}

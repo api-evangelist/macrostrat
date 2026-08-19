@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Meta API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meta",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/meta"
+          },
+          "docs": "API metadata and reference information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

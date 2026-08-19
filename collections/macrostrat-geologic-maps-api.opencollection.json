@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model Geologic Maps API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Geologic Maps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Geologic map units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map"
+          },
+          "docs": "Geologic map units from various data sources."
+        },
+        {
+          "info": {
+            "name": "Geologic map point features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map/points"
+          },
+          "docs": "Query point features from geologic maps."
+        },
+        {
+          "info": {
+            "name": "Geologic map legend",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/geologic_units/map/legend"
+          },
+          "docs": "Retrieve legends for geologic map units."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

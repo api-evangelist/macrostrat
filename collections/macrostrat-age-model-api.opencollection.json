@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Macrostrat Age Model API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Age Model",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get age model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://macrostrat.org/api/v2/age_model"
+          },
+          "docs": "Column age model components including unit boundaries."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
