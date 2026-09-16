@@ -1,8 +1,8 @@
 aid: macrostrat
 name: Macrostrat
-description: >-
-  Macrostrat is a platform for the aggregation and distribution of geological data relevant to the spatial and temporal
-  distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them.
+description: Macrostrat is a platform for the aggregation and distribution of geological data relevant
+  to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data
+  extracted from them.
 kind: contract
 deliveryModel:
   model: unknown
@@ -32,21 +32,23 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/macrostrat.png
 url: https://raw.githubusercontent.com/api-evangelist/macrostrat/refs/heads/main/apis.yml
 tags:
-  - Geological Data
-  - Geology
-  - Rocks
-  - Paleontology
-  - Earth Science
+- Geological Data
+- Geology
+- Rocks
+- Paleontology
+- Earth Science
 created: '2024-11-14'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 common:
-  - type: AgenticAccess
-    url: agentic-access/macrostrat-agentic-access.yml
-  - type: DomainSecurity
-    url: security/macrostrat-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/uw-macrostrat
+- type: Website
+  url: https://macrostrat.org
+- type: AgenticAccess
+  url: agentic-access/macrostrat-agentic-access.yml
+- type: DomainSecurity
+  url: security/macrostrat-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/uw-macrostrat
 apis:
 - aid: macrostrat:macrostrat-age-model-api
   name: Macrostrat Age Model API
@@ -245,5 +247,5 @@ apis:
   - type: Website
     url: https://macrostrat.org
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
