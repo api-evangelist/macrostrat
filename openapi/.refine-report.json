@@ -1,20 +1,7 @@
 {
   "provider": "macrostrat",
   "sources": [
-    "macrostrat-age-model-api-openapi.yml",
-    "macrostrat-cartography-api-openapi.yml",
-    "macrostrat-columns-api-openapi.yml",
-    "macrostrat-definitions-api-openapi.yml",
-    "macrostrat-fossils-api-openapi.yml",
-    "macrostrat-geologic-maps-api-openapi.yml",
-    "macrostrat-grids-api-openapi.yml",
-    "macrostrat-measurements-api-openapi.yml",
-    "macrostrat-meta-api-openapi.yml",
-    "macrostrat-mobile-api-openapi.yml",
-    "macrostrat-paleogeography-api-openapi.yml",
-    "macrostrat-sections-api-openapi.yml",
-    "macrostrat-stats-api-openapi.yml",
-    "macrostrat-units-api-openapi.yml"
+    "_original/macrostrat-openapi.yml"
   ],
   "outputs": [
     "macrostrat-age-model-api-openapi.yml",
@@ -35,6 +22,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "macrostrat-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "macrostrat-age-model-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-cartography-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-columns-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-definitions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-fossils-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-geologic-maps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-grids-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-measurements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-meta-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-mobile-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-paleogeography-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-sections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-stats-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "macrostrat-units-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
